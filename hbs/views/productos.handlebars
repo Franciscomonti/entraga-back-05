@@ -1,0 +1,29 @@
+<h2>Productos</h2>
+
+{{#if productos}}
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Foto</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each productos}}
+        <tr>
+            <td>{{this.titulo}}</td>
+            <td>{{this.precio}}</td>
+            <td> 
+                <img src="{{this.foto}}" alt="{{this.titulo}}">
+            </td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+{{else}}
+<h3>No se encontraron datos</h3>
+{{/if}}
+<a href="/productos">ir a carga de productos</a>

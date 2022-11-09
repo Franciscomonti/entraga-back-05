@@ -1,0 +1,26 @@
+include ./index.pug
+
+h2 Productos
+
+if productos.length > 0 
+    div 
+        table
+            thead 
+                tr
+                    th Nombre
+                    th Precio
+                    th Foto
+        
+            tbody 
+                for producto of productos 
+                    tr
+                        td= producto.titulo
+                        td= producto.precio
+                        td 
+                            img(src=producto.foto alt=producto.titulo)
+            
+else
+    h3  No se encontraron datos
+    
+a(href="/productos") 
+    button ir a carga de productos
